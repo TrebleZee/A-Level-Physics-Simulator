@@ -127,6 +127,10 @@ public class Particle {
     public double getRadius() { return radius; }
     public double getElasticity() { return elasticity; }
 
+    public double getAScalar() { return Math.sqrt(Math.pow(ax, 2) + Math.pow(ay, 2)); }
+
+    public double getAAngle() { return Math.toDegrees(Math.atan2(ax, ay)); }
+    
     public double getSpeed() {
         return Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2));
     }

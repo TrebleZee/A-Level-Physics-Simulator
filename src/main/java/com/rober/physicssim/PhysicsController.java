@@ -104,7 +104,7 @@ public class PhysicsController {
         timeLabel.setText(String.format("Time Scale: %.2fx", timeScale));
         posLabel.setText(String.format("Pos: (%.2f, %.2f)", p.getX(), p.getY()));
         velLabel.setText(String.format("Vel: %.2f m/s @ %.1f°", p.getSpeed(), p.getVAngle()));
-        accLabel.setText(String.format("Acc: (%.2f, %.2f)", p.getAx(), p.getAy()));
+        accLabel.setText(String.format("Acc: %.2f m/s/s @ %.2f°", p.getAScalar(), p.getAAngle()));
 
         double fx = p.lastFx;
         double fy = p.lastFy;

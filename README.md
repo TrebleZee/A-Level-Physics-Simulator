@@ -67,7 +67,7 @@ Use the simulator as a quick formative assessment:
 
 ## 1) Clone repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/TrebleZee/A-Level-Physics-Simulator
 cd A-Level-Physics-Simulator
 ```
 

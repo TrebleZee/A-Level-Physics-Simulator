@@ -63,9 +63,7 @@ Use the simulator as a quick formative assessment:
 
 ## Prerequisites
 - **JDK 25** (project is configured with source/target 25 in Maven).
-- **Maven** (or use the included Maven wrapper `./mvnw`).
-
-> Note: JavaFX dependencies are handled via Maven in this project.
+- **Maven** installed locally (`mvn`).
 
 ## 1) Clone repository
 ```bash
@@ -74,36 +72,14 @@ cd A-Level-Physics-Simulator
 ```
 
 ## 2) Build the project
-Using Maven wrapper (recommended):
-```bash
-./mvnw clean compile
-```
-
-Or with local Maven:
 ```bash
 mvn clean compile
 ```
 
 ## 3) Run the simulator
 ```bash
-./mvnw javafx:run
-```
-
-If needed, you can also run with local Maven:
-```bash
 mvn javafx:run
 ```
-
-
-## Maven wrapper troubleshooting
-If `./mvnw` fails with `Permission denied` on Unix/macOS/Linux:
-```bash
-chmod +x mvnw
-```
-
-If you are in a restricted/offline network and the wrapper cannot download Maven:
-- run with a locally installed Maven (`mvn clean compile`, `mvn javafx:run`), or
-- pre-download dependencies/plugins on a networked machine first.
 
 ## 4) Adjust simulation scenario (optional)
 To create custom classroom scenarios, edit particle initial values in:

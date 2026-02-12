@@ -32,6 +32,7 @@ public class PhysicsController {
 
     private boolean paused = false;
     private double timeScale = 1.0;
+    private static final double MAX_FRAME_DT = 1.0 / 30.0;
 
     private Map<Particle, Polyline> trails;
     final int MAX_POINTS = 800;
@@ -99,6 +100,10 @@ public class PhysicsController {
     }
 
     private void updateInfo() {
+        if (plane.getParticles().isEmpty()) {
+            return;
+        }
+
         Particle p = plane.getParticles().get(0);
 
         timeLabel.setText(String.format("Time Scale: %.2fx", timeScale));
@@ -126,6 +131,7 @@ public class PhysicsController {
 
                     double dt = (now - lastUpdate) / 1e9;
                     dt = dt * timeScale;
+                    dt = Math.max(-MAX_FRAME_DT, Math.min(MAX_FRAME_DT, dt));
 
                     //System.out.println(dt);
 
@@ -150,4 +156,3 @@ public class PhysicsController {
         lastUpdate = 0;
     }
 }
-

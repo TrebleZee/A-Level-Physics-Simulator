@@ -221,6 +221,7 @@ public class AxesPlane {
     public void handleLocalGravity() {
         final double G = 6.674e-6;
         int n = particles.size();
+        final double minDistSq = 1e-6;
 
         for (int i = 0; i < n; i++) {
             Particle a = particles.get(i);
@@ -228,24 +229,27 @@ public class AxesPlane {
             for (int j = i + 1; j < n; j++) {
                 Particle b = particles.get(j);
 
-                if (a instanceof Celestial && b instanceof Celestial) {
-                    double ma = a.getMass();
-                    double mb = b.getMass();
+                if (!(a instanceof Celestial && b instanceof Celestial)) {
+                    continue;
+                }
 
-                    double dx = b.getX() - a.getX();
-                    double dy = b.getY() - a.getY();
-                    double dist = Math.sqrt(dx * dx + dy * dy);
+                double ma = a.getMass();
+                double mb = b.getMass();
 
-                    long F = (long) (G * (ma * mb) / (dist * dist));
+                double dx = b.getX() - a.getX();
+                double dy = b.getY() - a.getY();
+                double distSq = (dx * dx) + (dy * dy);
+                if (distSq < minDistSq) {
+                    distSq = minDistSq;
+                }
 
-                    double degrees = Math.toDegrees(Math.asin(dy / dist));
-                    double aa = (dx >= 0) ? degrees : 180 - degrees;
-                    double ab = aa - 180;
+                double dist = Math.sqrt(distSq);
+                double forceMagnitude = G * (ma * mb) / distSq;
+                double fx = forceMagnitude * (dx / dist);
+                double fy = forceMagnitude * (dy / dist);
 
-                    a.applyForce(new double[]{F, aa});
-                    b.applyForce(new double[]{F, ab});
-                    //System.out.println("g force: " + F + " angle: " + aa);
-                } else { return; }
+                a.applyForce(fx, fy);
+                b.applyForce(-fx, -fy);
             }
         }
     }
@@ -280,10 +284,10 @@ public class AxesPlane {
                 double vx = p.getVx();
                 double vy = p.getVy();
                 double Cd = 0.3;
-                double fx = Math.max(0.0001, 0.5 * globalAirDensity * Math.pow(vx, 2) * Cd * Area);
-                double fy = Math.max(0.0001, 0.5 * globalAirDensity * Math.pow(vy, 2) * Cd * Area);
+                double fx = 0.5 * globalAirDensity * Math.pow(vx, 2) * Cd * Area;
+                double fy = 0.5 * globalAirDensity * Math.pow(vy, 2) * Cd * Area;
                 fx = (vx >= 0) ? -fx : fx;
-                fy = (vy >= 0) ? -fx : fy;
+                fy = (vy >= 0) ? -fy : fy;
                 p.applyForce(fx, fy);
                 //System.out.println("applied air resistance " + fx + " " + fy);
 
@@ -294,9 +298,9 @@ public class AxesPlane {
                 double vx = p.getVx();
                 double vy = p.getVy();
                 double n = globalViscosity;
-                double fx = (vx > 0) ? Math.max(0.0001, 6 * Math.PI * r * n * vx) : 0;
-                double fy = (vy > 0) ? Math.max(0.0001, 6 * Math.PI * r * n * vy) : 0;
-                p.applyForce(-fx, -fy);
+                double fx = -6 * Math.PI * r * n * vx;
+                double fy = -6 * Math.PI * r * n * vy;
+                p.applyForce(fx, fy);
             }
 
 

@@ -4,6 +4,30 @@ An interactive JavaFX simulation tool designed to support **secondary school sci
 
 ## Project scope and goals
 
+## Refactor production branch status
+
+This repository is currently in a **transition phase** between:
+
+- `treble.demo.physicssim` → the original demo/prototype implementation.
+- `fyzzbox.physicsapp` (sometimes referred to as `fyyzbox` in planning notes) → the refactored production-track architecture.
+
+The **refactor production branch direction** is to make `fyzzbox.physicsapp` the main application surface because it provides a cleaner separation of concerns:
+
+- `app/` for startup and scene composition.
+- `controller/` for interaction and orchestration logic.
+- `model/` for physics/domain rules and scenario definitions.
+- `view/` for JavaFX presentation components.
+- `util/` for shared timing/unit helpers.
+
+This structure is easier to scale, test, and maintain than the prototype package, where responsibilities are more tightly coupled.
+
+### Planned package ownership
+
+- **Current default runtime path**: `treble.demo.physicssim` (configured as the active launcher in Maven).
+- **Target main app path**: `fyzzbox.physicsapp` (the package intended to become the primary app once migration tasks are completed).
+
+During this migration period, the demo/prototype package remains useful for quick comparisons and regression checks, but new architecture work should prefer the `fyzzbox.physicsapp` side so the production branch can converge on the refactored design.
+
 ### Educational scope
 This project targets learners in a secondary school setting (including A-Level / upper secondary classes) and supports teachers with a visual demonstration environment for core physics ideas.
 

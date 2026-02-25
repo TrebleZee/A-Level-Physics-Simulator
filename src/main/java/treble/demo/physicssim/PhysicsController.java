@@ -1,4 +1,4 @@
-package com.rober.physicssim;
+package treble.demo.physicssim;
 
 import javafx.animation.AnimationTimer;
 import javafx.collections.ObservableList;

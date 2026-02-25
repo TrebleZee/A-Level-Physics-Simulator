@@ -1,4 +1,4 @@
-package com.rober.physicssim;
+package treble.demo.physicssim;
 
 public class Launcher {
     static void main(String[] args) {

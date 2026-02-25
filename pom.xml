@@ -98,7 +98,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.rober.physicssim/com.rober.physicssim.Launcher</mainClass>
+                            <mainClass>com.rober.physicssim/treble.demo.physicssim.Launcher</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -191,7 +191,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.rober.physicssim.Launcher</mainClass>
+                            <mainClass>treble.demo.physicssim.Launcher</mainClass>
                         </manifest>
                     </archive>
                     <finalName>PhysicsSimulator-${project.version}</finalName>
@@ -229,7 +229,7 @@
                             <finalName>PhysicsSimulator-${project.version}-standalone</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.rober.physicssim.Launcher</mainClass>
+                                    <mainClass>treble.demo.physicssim.Launcher</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

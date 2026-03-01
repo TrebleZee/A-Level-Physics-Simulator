@@ -57,13 +57,14 @@ public class PhysicsApp extends Application {
         // --v-- Add Particles here --v--
 
 
-        Celestial p2 = new Celestial(7000, 10000, 0, 6600, 8e16, 200);
-        Celestial p1 = new Celestial(13000, 10000, 0, -6600, 8e16, 200);
+        Particle p2 = new Particle(90, 40, 0, 0, 10, 5);
+        //Particle p1 = new Particle(13000, 10000, 0, -6600, 8e16, 200);
        // Celestial p3 = new Celestial(14000, 10000, 0.0, -18000, 8e13, 200);
 
-        plane.addParticle(p1);
+        //plane.addParticle(p1);
         plane.addParticle(p2);
         //plane.addParticle(p3);
+        p2.applyForce(new double[] {100000,-30});
 
 
 

@@ -1,10 +1,9 @@
-package com.rober.physicssim;
+package treble.demo.physicssim;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -12,9 +11,7 @@ import javafx.scene.shape.Polyline;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class PhysicsApp extends Application {
@@ -60,13 +57,14 @@ public class PhysicsApp extends Application {
         // --v-- Add Particles here --v--
 
 
-        Celestial p2 = new Celestial(10000, 10000, 0, 0, 8e24, 1000);
-        Celestial p1 = new Celestial(17500, 10000, 0, -9300, 8e14, 800);
-        //Celestial p3 = new Celestial(15000, 16000, 0.0, -200, 8e15, 800);
+        Particle p2 = new Particle(90, 40, 0, 0, 10, 5);
+        //Particle p1 = new Particle(13000, 10000, 0, -6600, 8e16, 200);
+       // Celestial p3 = new Celestial(14000, 10000, 0.0, -18000, 8e13, 200);
 
-        plane.addParticle(p1);
+        //plane.addParticle(p1);
         plane.addParticle(p2);
         //plane.addParticle(p3);
+        p2.applyForce(new double[] {100000,-30});
 
 
 

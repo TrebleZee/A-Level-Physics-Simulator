@@ -6,7 +6,7 @@
 
 <AnchorPane fx:id="root" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.rober.physicssim.PhysicsController">
+            fx:controller="treble.demo.physicssim.PhysicsController">
 
 <!-- Simulation Pane -->
 <Pane fx:id="simPane" prefWidth="800" prefHeight="600"

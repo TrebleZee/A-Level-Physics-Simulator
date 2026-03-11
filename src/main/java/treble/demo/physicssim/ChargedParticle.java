@@ -1,4 +1,4 @@
-package com.rober.physicssim;
+package treble.demo.physicssim;
 
 public class ChargedParticle extends Particle {
     private double charge;

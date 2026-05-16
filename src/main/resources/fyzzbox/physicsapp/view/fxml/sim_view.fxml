@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fyzzbox.physicsapp.controller.SimulationController"
-            stylesheets="@../css/darktheme.css">
+<BorderPane prefHeight="577.0" prefWidth="904.0" stylesheets="@../css/darktheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.SimulationController">
 
     <!-- ===== TOP: MENU BAR ===== -->
     <top>
-        <MenuBar>
+        <MenuBar prefHeight="0.0" prefWidth="1082.0">
             <Menu text="File">
-                <MenuItem text="New"/>
-                <MenuItem text="Load"/>
-                <MenuItem text="Save"/>
-                <MenuItem text="Exit"/>
+                <MenuItem text="New" />
+                <MenuItem text="Load" />
+                <MenuItem text="Save" />
+                <MenuItem text="Exit" />
             </Menu>
             <Menu text="Edit">
-                <MenuItem text="Undo"/>
-                <MenuItem text="Redo"/>
+                <MenuItem text="Undo" />
+                <MenuItem text="Redo" />
             </Menu>
             <Menu text="Help">
-                <MenuItem text="About"/>
+                <MenuItem text="About" />
             </Menu>
         </MenuBar>
     </top>
@@ -46,30 +44,34 @@
 
     <!-- ===== RIGHT: OBJECT INSPECTOR ===== -->
     <right>
-        <VBox spacing="10" styleClass="inspector-panel">
-            <Label text="Object Inspector" styleClass="heading-2"/>
+        <VBox prefHeight="0.0" prefWidth="240.0" spacing="10" styleClass="inspector-panel">
+            <Label styleClass="heading-2" text="Object Inspector" />
 
-            <Label text="Selected Object:"/>
-            <Label fx:id="selectedName" text="None" styleClass="accent-yellow"/>
+            <Label text="Selected Object:" />
+            <Label fx:id="selectedName" styleClass="accent-yellow" text="None" />
 
-            <Separator/>
+            <Separator />
 
-            <Label text="Properties:"/>
-            <VBox fx:id="propertiesBox" spacing="6"/>
+            <Label text="Properties:" />
+            <VBox fx:id="propertiesBox" spacing="6" />
 
         </VBox>
     </right>
 
     <!-- ===== BOTTOM: CONTROL BAR ===== -->
     <bottom>
-        <HBox spacing="20" alignment="CENTER_LEFT" styleClass="control-bar">
-            <Button fx:id="playPauseButton" text="▶" styleClass="icon-button"/>
-            <Button fx:id="stepButton" text="Step" styleClass="menu-button"/>
-            <Button fx:id="resetButton" text="Reset" styleClass="menu-button"/>
+        <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="904.0" spacing="20" styleClass="control-bar">
+            <Button fx:id="resetButton" styleClass="button" text="Reset" />
+         <Button fx:id="rewind" layoutX="30.0" layoutY="29.0" styleClass="icon-button" text="⏮" />
+         <Button fx:id="stepBack" styleClass="icon-button" text="⏪" />
+            <Button fx:id="playPauseButton" styleClass="icon-button" text="⏯" />
+            <Button fx:id="stepButton" styleClass="icon-button" text="⏩" />
+         <TextField prefHeight="29.0" prefWidth="41.0" />
+         <Slider fx:id="timeScale" majorTickUnit="0.5" max="4.0" min="0.01" minorTickCount="5" showTickMarks="true" snapToTicks="true" value="1.0" />
 
-            <Region HBox.hgrow="ALWAYS"/>
+            <Region HBox.hgrow="ALWAYS" />
 
-            <Button fx:id="settingsButton" text="Settings" styleClass="menu-button"/>
+            <Button fx:id="settingsButton" prefHeight="19.0" prefWidth="119.0" styleClass="menu-button" text="Settings" />
         </HBox>
     </bottom>
 

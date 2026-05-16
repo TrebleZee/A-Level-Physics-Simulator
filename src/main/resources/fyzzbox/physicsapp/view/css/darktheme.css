@@ -37,21 +37,23 @@
    ============================================================ */
 
 .button {
-    -fx-background-color: #FFB86C;
+    -fx-background-color: #FFB86C;   /* base pastel orange */
     -fx-text-fill: #1A1A1A;
     -fx-background-radius: 6;
     -fx-padding: 8 16;
     -fx-font-size: 14px;
-    -fx-cursor: hand;
 }
 
+/* Hover: slightly lighter pastel orange */
 .button:hover {
-    -fx-background-color: #FF6F6F;
+    -fx-background-color: #FFC48A;   /* lighter pastel orange */
 }
 
+/* Pressed: darker pastel orange */
 .button:pressed {
-    -fx-background-color: #9AE6B4;
+    -fx-background-color: #CC8A4F;   /* darker orange */
 }
+
 
 /* Flat button */
 .button-flat {
@@ -73,7 +75,7 @@
     -fx-background-radius: 6;
     -fx-border-color: #FFB86C;
     -fx-border-radius: 6;
-    -fx-padding: 6 10;
+    -fx-padding: 4 8;
 }
 
 .text-field:focused, .password-field:focused {
@@ -95,7 +97,7 @@
 }
 
 .slider:hover .thumb {
-    -fx-background-color: #FF6F6F;
+    -fx-background-color: #9AE6B4;
 }
 
 /* ============================================================
@@ -157,7 +159,18 @@
    ============================================================ */
 
 .menu-bar {
-    -fx-background-color: #222222;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #222222;
+    -fx-background-color: #333333;
+}
+
+.menu-bar .menu-button {
+    -fx-padding: 2 8;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 12px;
 }
 
 .menu-bar .label {
@@ -270,18 +283,19 @@
 
 .menu-button:hover {
     -fx-background-color: #333333;
-    -fx-border-color: #FF6F6F;
+    -fx-border-color: #9AE6B4;
 }
 
 .menu-button:pressed {
-    -fx-background-color: #9AE6B4;
-    -fx-text-fill: #1A1A1A;
+    -fx-background-color: #111111; /* dark charcoal press */
+    -fx-text-fill: #FFB86C;
 }
+
 
 .inspector-panel {
     -fx-background-color: #222222;
     -fx-padding: 16;
-    -fx-background-radius: 8 0 0 8;
+    -fx-background-radius: 0 0 0 0;
     -fx-min-width: 240;
 }
 
@@ -299,10 +313,13 @@
     -fx-padding: 6 12;
 }
 
+/* Hover: lighter charcoal */
 .icon-button:hover {
-    -fx-text-fill: #FF6F6F;
+    -fx-background-color: #2A2A2A;   /* lighter charcoal */
 }
 
+/* Pressed: darker charcoal */
 .icon-button:pressed {
-    -fx-text-fill: #9AE6B4;
+    -fx-background-color: #111111;
+    -fx-text-fill: #9AE6B4;/* darker charcoal */
 }

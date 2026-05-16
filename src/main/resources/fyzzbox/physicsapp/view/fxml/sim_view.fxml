@@ -7,32 +7,70 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
 
-<BorderPane prefHeight="475.0" prefWidth="719.0" stylesheets="@../css/darktheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.SimulationController">
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fyzzbox.physicsapp.controller.SimulationController"
+            stylesheets="@../css/darktheme.css">
+
+    <!-- ===== TOP: MENU BAR ===== -->
     <top>
         <MenuBar>
             <Menu text="File">
-                <MenuItem text="New" />
-                <MenuItem text="Load" />
-                <MenuItem text="Save" />
-                <MenuItem text="Exit" />
+                <MenuItem text="New"/>
+                <MenuItem text="Load"/>
+                <MenuItem text="Save"/>
+                <MenuItem text="Exit"/>
             </Menu>
             <Menu text="Edit">
-                <MenuItem text="Undo" />
-                <MenuItem text="Redo" />
+                <MenuItem text="Undo"/>
+                <MenuItem text="Redo"/>
             </Menu>
             <Menu text="Help">
-                <MenuItem text="About" />
+                <MenuItem text="About"/>
             </Menu>
         </MenuBar>
     </top>
-   <center>
-      <AnchorPane prefHeight="450.0" prefWidth="546.0" BorderPane.alignment="CENTER" />
-   </center>
-   <right>
-      <VBox minWidth="193.0" prefHeight="323.0" prefWidth="193.0" styleClass="inspector-panel" BorderPane.alignment="CENTER" />
-   </right>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="control-bar" BorderPane.alignment="CENTER" />
-   </bottom>
+
+    <!-- ===== CENTER: SIMULATION CANVAS ===== -->
+    <center>
+        <AnchorPane fx:id="simulationContainer">
+            <!-- Canvas will be added in controller -->
+        </AnchorPane>
+    </center>
+
+    <!-- ===== RIGHT: OBJECT INSPECTOR ===== -->
+    <right>
+        <VBox spacing="10" styleClass="inspector-panel">
+            <Label text="Object Inspector" styleClass="heading-2"/>
+
+            <Label text="Selected Object:"/>
+            <Label fx:id="selectedName" text="None" styleClass="accent-yellow"/>
+
+            <Separator/>
+
+            <Label text="Properties:"/>
+            <VBox fx:id="propertiesBox" spacing="6"/>
+
+        </VBox>
+    </right>
+
+    <!-- ===== BOTTOM: CONTROL BAR ===== -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER_LEFT" styleClass="control-bar">
+            <Button fx:id="playPauseButton" text="▶" styleClass="icon-button"/>
+            <Button fx:id="stepButton" text="Step" styleClass="menu-button"/>
+            <Button fx:id="resetButton" text="Reset" styleClass="menu-button"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button fx:id="settingsButton" text="Settings" styleClass="menu-button"/>
+        </HBox>
+    </bottom>
+
 </BorderPane>

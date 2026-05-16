@@ -5,29 +5,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER"
-      spacing="24.0"
-      xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="fyzzbox.physicsapp.controller.StartController">
+<VBox alignment="CENTER" prefHeight="402.0" prefWidth="663.0" spacing="24.0" stylesheets="@../css/darktheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.StartController">
 
     <padding>
-        <Insets top="48.0" right="48.0" bottom="48.0" left="48.0"/>
+        <Insets bottom="48.0" left="48.0" right="48.0" top="48.0" />
     </padding>
 
     <!-- App title -->
-    <Label text="FyzzBox"
-           style="-fx-font-size: 48px; -fx-font-weight: bold;"/>
+    <Label style="-fx-font-size: 48px; -fx-font-weight: bold;" styleClass="heading-1" stylesheets="@../css/darktheme.css" text="FyzzBox" />
 
     <!-- Tagline -->
-    <Label text="Educational Physics Simulator"
-           style="-fx-font-size: 16px; -fx-text-fill: #666666;"/>
+    <Label style="-fx-font-size: 16px; -fx-text-fill: #666666;" styleClass="heading-2" stylesheets="@../css/darktheme.css" text="Educational Physics Simulator" />
 
     <!-- Start button — navigates to main menu -->
-    <Button text="Start"
-            onAction="#onStartClicked"
-            prefWidth="160.0"
-            prefHeight="40.0"
-            style="-fx-font-size: 14px;"/>
+    <Button onAction="#onStartClicked" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 14px;" stylesheets="@../css/darktheme.css" text="Start" />
+   <Button mnemonicParsing="false" text="Exit" />
 
 </VBox>

@@ -277,3 +277,32 @@
     -fx-background-color: #9AE6B4;
     -fx-text-fill: #1A1A1A;
 }
+
+.inspector-panel {
+    -fx-background-color: #222222;
+    -fx-padding: 16;
+    -fx-background-radius: 8 0 0 8;
+    -fx-min-width: 240;
+}
+
+.control-bar {
+    -fx-background-color: #222222;
+    -fx-padding: 10 20;
+    -fx-border-color: #333333;
+    -fx-border-width: 1 0 0 0;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFB86C;
+    -fx-font-size: 20px;
+    -fx-padding: 6 12;
+}
+
+.icon-button:hover {
+    -fx-text-fill: #FF6F6F;
+}
+
+.icon-button:pressed {
+    -fx-text-fill: #9AE6B4;
+}

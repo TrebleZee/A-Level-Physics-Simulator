@@ -257,3 +257,23 @@
 .dialog-pane .button {
     -fx-background-color: #FFB86C;
 }
+
+.menu-button {
+    -fx-background-color: #222222;
+    -fx-text-fill: #EDEDED;
+    -fx-background-radius: 8;
+    -fx-padding: 12 24;
+    -fx-font-size: 18px;
+    -fx-border-color: #FFB86C;
+    -fx-border-radius: 8;
+}
+
+.menu-button:hover {
+    -fx-background-color: #333333;
+    -fx-border-color: #FF6F6F;
+}
+
+.menu-button:pressed {
+    -fx-background-color: #9AE6B4;
+    -fx-text-fill: #1A1A1A;
+}

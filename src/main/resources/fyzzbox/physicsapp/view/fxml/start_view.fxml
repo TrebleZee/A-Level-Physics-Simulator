@@ -5,12 +5,29 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="16.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+<VBox alignment="CENTER"
+      spacing="24.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="fyzzbox.physicsapp.controller.StartController">
+
     <padding>
-        <Insets top="24.0" right="24.0" bottom="24.0" left="24.0"/>
+        <Insets top="48.0" right="48.0" bottom="48.0" left="48.0"/>
     </padding>
 
-    <Label text="Physics Simulator"/>
-    <Button text="Start Simulation" onAction="#onStartClicked"/>
+    <!-- App title -->
+    <Label text="FyzzBox"
+           style="-fx-font-size: 48px; -fx-font-weight: bold;"/>
+
+    <!-- Tagline -->
+    <Label text="Educational Physics Simulator"
+           style="-fx-font-size: 16px; -fx-text-fill: #666666;"/>
+
+    <!-- Start button — navigates to main menu -->
+    <Button text="Start"
+            onAction="#onStartClicked"
+            prefWidth="160.0"
+            prefHeight="40.0"
+            style="-fx-font-size: 14px;"/>
+
 </VBox>

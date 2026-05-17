@@ -1,0 +1,280 @@
+/* ============================================================
+   GLOBAL THEME — LIGHT MODE + PASTEL ACCENTS
+   ============================================================ */
+
+.root {
+    -fx-background-color: #F5F5F7;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+    -fx-text-fill: #222222;
+}
+
+/* Text defaults */
+.label, .text {
+    -fx-text-fill: #222222;
+}
+
+/* Headings */
+.heading-1 {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #C7A4FF; /* pastel purple */
+}
+
+.heading-2 {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9EC9FF; /* pastel blue */
+}
+
+/* Accent text classes */
+.accent-purple { -fx-text-fill: #C7A4FF; }
+.accent-pink   { -fx-text-fill: #FF9ECF; }
+.accent-green  { -fx-text-fill: #A6E8C5; }
+.accent-blue   { -fx-text-fill: #9EC9FF; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.button {
+    -fx-background-color: #EDEDED;
+    -fx-text-fill: #222222;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16;
+    -fx-font-size: 14px;
+    -fx-border-color: #C7A4FF;
+    -fx-border-radius: 6;
+}
+
+/* Hover: lighter pastel purple */
+.button:hover {
+    -fx-background-color: #F2E8FF;
+}
+
+/* Pressed: darker neutral */
+.button:pressed {
+    -fx-background-color: #D0D0D0;
+}
+
+/* ============================================================
+   ICON BUTTONS
+   ============================================================ */
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9EC9FF;
+    -fx-font-size: 20px;
+    -fx-padding: 6 12;
+}
+
+/* Hover: light grey */
+.icon-button:hover {
+    -fx-background-color: #E6E6E6;
+}
+
+/* Pressed: darker grey */
+.icon-button:pressed {
+    -fx-background-color: #CCCCCC;
+}
+
+/* ============================================================
+   TEXTFIELDS & PASSWORD FIELDS
+   ============================================================ */
+
+.text-field, .password-field {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #222222;
+    -fx-background-radius: 6;
+    -fx-border-color: #9EC9FF;
+    -fx-border-radius: 6;
+    -fx-padding: 6 10;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #C7A4FF;
+}
+
+/* ============================================================
+   SLIDERS
+   ============================================================ */
+
+.slider .track {
+    -fx-background-color: #DDDDDD;
+    -fx-background-radius: 3;
+}
+
+.slider .thumb {
+    -fx-background-color: #9EC9FF;
+    -fx-background-radius: 50%;
+}
+
+.slider:hover .thumb {
+    -fx-background-color: #C7A4FF;
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+
+.progress-bar {
+    -fx-accent: #A6E8C5;
+}
+
+.progress-bar .track {
+    -fx-background-color: #DDDDDD;
+}
+
+/* ============================================================
+   CHECKBOXES & RADIO BUTTONS
+   ============================================================ */
+
+.check-box, .radio-button {
+    -fx-text-fill: #222222;
+}
+
+.check-box .box, .radio-button .radio {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #C7A4FF;
+}
+
+.check-box:selected .box, .radio-button:selected .radio {
+    -fx-background-color: #A6E8C5;
+}
+
+/* ============================================================
+   COMBOBOX
+   ============================================================ */
+
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #9EC9FF;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: #222222;
+}
+
+.combo-box:hover {
+    -fx-border-color: #C7A4FF;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #222222;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #F2F2F2;
+}
+
+/* ============================================================
+   MENUBAR & MENUS
+   ============================================================ */
+
+.menu-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0 6;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-bar .button {
+    -fx-padding: 2 8;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+}
+
+.menu-bar .button:hover {
+    -fx-background-color: #F2F2F2;
+    -fx-text-fill: #C7A4FF;
+}
+
+.context-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #222222;
+}
+
+/* ============================================================
+   TABPANE
+   ============================================================ */
+
+.tab-pane {
+    -fx-background-color: #F5F5F7;
+}
+
+.tab {
+    -fx-background-color: #FFFFFF;
+    -fx-text-base-color: #222222;
+}
+
+.tab:selected {
+    -fx-background-color: #F2E8FF;
+    -fx-text-base-color: #C7A4FF;
+}
+
+/* ============================================================
+   SCROLLBARS
+   ============================================================ */
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #9EC9FF;
+}
+
+/* ============================================================
+   LISTVIEW & TABLEVIEW
+   ============================================================ */
+
+.list-view, .table-view {
+    -fx-background-color: #FFFFFF;
+}
+
+.list-cell, .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #222222;
+}
+
+.list-cell:hover, .table-row-cell:hover {
+    -fx-background-color: #F2F2F2;
+}
+
+.list-cell:selected, .table-row-cell:selected {
+    -fx-background-color: #FF9ECF;
+    -fx-text-fill: #222222;
+}
+
+/* ============================================================
+   CARDS / PANELS
+   ============================================================ */
+
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 12, 0, 0, 4);
+}
+
+/* ============================================================
+   ALERTS / DIALOGS
+   ============================================================ */
+
+.dialog-pane {
+    -fx-background-color: #FFFFFF;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #C7A4FF;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: #222222;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #EDEDED;
+}

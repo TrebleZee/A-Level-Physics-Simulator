@@ -8,6 +8,7 @@ module com.rober.physicssim {
 
     opens treble.demo.physicssim to javafx.fxml;
     opens fyzzbox.physicsapp.controller to javafx.fxml;
+    opens fyzzbox.physicsapp.view to javafx.fxml;
 
     exports treble.demo.physicssim;
     exports fyzzbox.physicsapp.app;
@@ -16,5 +17,5 @@ module com.rober.physicssim {
     exports fyzzbox.physicsapp.model.scenarios;
     exports fyzzbox.physicsapp.model.world;
     exports fyzzbox.physicsapp.util;
-    exports fyzzbox.physicsapp.view.ui;
+    exports fyzzbox.physicsapp.view;
 }

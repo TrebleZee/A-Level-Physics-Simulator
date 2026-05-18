@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="577.0" prefWidth="904.0" stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.SimulationController">
+
+    <!-- ===== TOP: MENU BAR ===== -->
+    <top>
+        <MenuBar prefHeight="0.0" prefWidth="1082.0" stylesheets="@../../css/lighttheme.css">
+            <Menu text="File">
+                <MenuItem text="New" />
+                <MenuItem text="Load" />
+                <MenuItem text="Save" />
+                <MenuItem text="Exit" />
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Undo" />
+                <MenuItem text="Redo" />
+            </Menu>
+            <Menu text="Help">
+                <MenuItem text="About" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <!-- ===== CENTER: SIMULATION CANVAS ===== -->
+    <center>
+        <AnchorPane fx:id="simulationContainer" stylesheets="@../../css/lighttheme.css">
+            <!-- Canvas added in controller -->
+        </AnchorPane>
+    </center>
+
+    <!-- ===== RIGHT: OBJECT INSPECTOR ===== -->
+    <right>
+        <VBox prefHeight="0.0" prefWidth="240.0" spacing="10" styleClass="inspector-panel" stylesheets="@../../css/lighttheme.css">
+            <Label styleClass="heading-2" text="Object Inspector" />
+
+            <Label text="Selected Object:" />
+            <Label fx:id="selectedName" styleClass="accent-blue" text="None" />
+
+            <Separator />
+
+            <Label text="Properties:" />
+            <VBox fx:id="propertiesBox" spacing="6" />
+        </VBox>
+    </right>
+
+    <!-- ===== BOTTOM: CONTROL BAR ===== -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="control-bar" stylesheets="@../../css/lighttheme.css">
+
+            <!-- Reset -->
+            <Button fx:id="resetButton" style="-fx-font-size: 12;" styleClass="exit-button" text="Reset" />
+
+            <!-- Time controls -->
+            <Button fx:id="rewind" styleClass="icon-button" text="⏮" />
+            <Button fx:id="stepBack" styleClass="icon-button" text="⏪" />
+            <Button fx:id="playPauseButton" styleClass="icon-button" text="⏯" />
+            <Button fx:id="stepButton" styleClass="icon-button" text="⏩" />
+
+            <Label text="Time Scale:" />
+
+            <TextField fx:id="timeScaleField" prefHeight="29.0" prefWidth="50.0" text="1" />
+
+            <Slider fx:id="timeScale" majorTickUnit="0.5" max="4.0" min="0.01" minorTickCount="5" showTickMarks="true" snapToTicks="true" value="1.0" />
+
+            <!-- Start -->
+            <Button fx:id="startSim" styleClass="start-sim-button" text="Start" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Settings -->
+            <Button fx:id="settingsButton" styleClass="menu-button" text="Settings" />
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

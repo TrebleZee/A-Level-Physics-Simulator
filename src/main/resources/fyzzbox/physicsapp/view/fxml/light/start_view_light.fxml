@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" spacing="40"
+      prefWidth="1280" prefHeight="720"
+      stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1">
+
+   <Label text="FyzzBox" styleClass="heading-1"/>
+
+   <Label text="Educational Physics Simulator"
+          styleClass="heading-2"/>
+
+   <Button text="Start" styleClass="menu-square"/>
+   <Button text="Exit" styleClass="menu-square"/>
+
+</VBox>
+

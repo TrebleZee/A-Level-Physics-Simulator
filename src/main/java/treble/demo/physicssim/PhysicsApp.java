@@ -64,7 +64,7 @@ public class PhysicsApp extends Application {
         //plane.addParticle(p1);
         plane.addParticle(p2);
         //plane.addParticle(p3);
-        p2.applyForce(new double[] {100000,-30});
+        p2.applyForce(new double[] {32000,41000});
 
 
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="782.0" prefWidth="1227.0" spacing="24.0" stylesheets="@../../css/darktheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.StartController">
+<VBox alignment="CENTER" prefHeight="322.0" prefWidth="728.0" spacing="24.0" stylesheets="@../../css/darktheme.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.StartController">
 
     <padding>
         <Insets bottom="48.0" left="48.0" right="48.0" top="48.0" />
@@ -26,5 +25,6 @@
     <!-- Start button — navigates to main menu -->
     <Button onAction="#onStartClicked" prefHeight="75.0" prefWidth="243.0" style="-fx-font-weight: bold;" styleClass="start-button" stylesheets="@../../css/darktheme.css" text="Start" VBox.vgrow="ALWAYS" />
    <Button mnemonicParsing="false" style="-fx-font-size: 12;" styleClass="exit-button" stylesheets="@../../css/darktheme.css" text="Exit" VBox.vgrow="ALWAYS" />
+   <Label styleClass="accent-red" text="v0.1.0-alpha.1" />
 
 </VBox>

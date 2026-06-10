@@ -21,12 +21,12 @@ public class SceneManager {
     }
 
     public void showStartView() {
-        showView("/fyzzbox/physicsapp/view/fxml/start_view.fxml");
+        showView("/fyzzbox/physicsapp/view/fxml/dark/start_view.fxml");
         stage.setTitle("Physics Sim - Start");
     }
 
     public void showSimulationView() {
-        showView("/fyzzbox/physicsapp/view/fxml/sim_view.fxml");
+        showView("/fyzzbox/physicsapp/view/fxml/dark/sim_view.fxml");
         stage.setTitle("Physics Sim - Simulation");
     }
 

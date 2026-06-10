@@ -7,41 +7,46 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<?import java.lang.String?>
-<AnchorPane stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="567.0" prefWidth="1526.0" stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER" spacing="24.0" stylesheets="@../../css/lighttheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" style="-fx-font-size: 80;" styleClass="heading-1" stylesheets="@../../css/lighttheme.css" text="Main Menu" />
             <HBox alignment="CENTER" spacing="40" stylesheets="@../../css/lighttheme.css">
                <children>
-                  <Button styleClass="menu-card">
+                  <Button styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
-                           <Label text="Load from Saved" styleClass="menu-card-title"/>
-                           <Label text="Open a previously saved simulation" styleClass="menu-card-subtitle"/>
+                           <Label styleClass="menu-card-title" text="Load from Saved" />
+                           <Label styleClass="menu-card-subtitle" text="Open a previously saved simulation" />
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button styleClass="menu-card">
+                  <Button styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
-                           <Label text="Start New" styleClass="menu-card-title"/>
-                           <Label text="Start a blank new simulation" styleClass="menu-card-subtitle"/>
+                           <Label styleClass="menu-card-title" text="Start New" />
+                           <Label styleClass="menu-card-subtitle" text="Start a blank new simulation" />
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button styleClass="menu-card">
+                  <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="119.0" styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
-                           <Label text="Settings" styleClass="menu-card-title"/>
+                           <Label styleClass="menu-card-title" text="Settings" />
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button styleClass="menu-card">
+                  <Button alignment="CENTER" prefHeight="119.0" styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
-                           <Label text="Back" styleClass="menu-card-title"/>
+                           <Label contentDisplay="CENTER" styleClass="menu-card-title" text="Back" />
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
                         </VBox>
                      </graphic>
                   </Button>

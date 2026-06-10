@@ -103,7 +103,7 @@ public class Particle {
                     fy = 0;
                     break;
                 case MOTION:
-                    vx = vy = ax =  ay = fx = fy = 0;
+                    vx = vy = ax = ay = fx = fy = 0;
                     break;
                 case ALL:
                     x = y = vx = vy = ax = ay = fx = fy = 0;

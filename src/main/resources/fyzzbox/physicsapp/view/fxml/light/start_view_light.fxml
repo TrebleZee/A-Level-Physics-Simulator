@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<VBox alignment="CENTER" prefHeight="720" prefWidth="1280" spacing="40" stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
 
-<VBox alignment="CENTER" spacing="40"
-      prefWidth="1280" prefHeight="720"
-      stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css"
-      xmlns="http://javafx.com/javafx/26"
-      xmlns:fx="http://javafx.com/fxml/1">
+   <Label style="-fx-font-size: 100;" styleClass="heading-1" stylesheets="@../../css/lighttheme.css" text="FyzzBox" />
 
-   <Label text="FyzzBox" styleClass="heading-1"/>
+   <Label styleClass="heading-2" stylesheets="@../../css/lighttheme.css" text="Educational Physics Simulator" />
 
-   <Label text="Educational Physics Simulator"
-          styleClass="heading-2"/>
+   <Button styleClass="menu-square" stylesheets="@../../css/lighttheme.css" text="Start" />
+   <Button styleClass="menu-square" stylesheets="@../../css/lighttheme.css" text="Exit" />
 
-   <Button text="Start" styleClass="menu-square"/>
-   <Button text="Exit" styleClass="menu-square"/>
-
+   <Label styleClass="accent-pink" stylesheets="@../../css/lighttheme.css" text="v0.1.0-alpha.1" />
 </VBox>
-

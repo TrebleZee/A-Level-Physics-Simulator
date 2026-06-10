@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane prefWidth="700" prefHeight="450"
+            stylesheets="@../../css/darktheme.css"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- ===== LEFT SIDEBAR ===== -->
+    <left>
+        <VBox spacing="10" styleClass="settings-sidebar">
+            <Label text="Settings" styleClass="heading-2"/>
+
+            <Button text="General"   styleClass="settings-tab"/>
+            <Button text="Display"   styleClass="settings-tab"/>
+            <Button text="Simulation" styleClass="settings-tab"/>
+            <Button text="Controls"  styleClass="settings-tab"/>
+        </VBox>
+    </left>
+
+    <!-- ===== MAIN CONTENT AREA ===== -->
+    <center>
+        <VBox spacing="12" styleClass="settings-content">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="General Settings" styleClass="heading-2"/>
+
+            <HBox spacing="10">
+                <Label text="Theme:"/>
+                <ComboBox fx:id="themeSelector">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Dark"/>
+                            <String fx:value="Light"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Autosave Interval:"/>
+                <TextField fx:id="autosaveField" prefWidth="60"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+    <!-- ===== BOTTOM BUTTON BAR ===== -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT"
+              styleClass="settings-bottom-bar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Cancel" styleClass="menu-square"/>
+            <Button text="Apply"  styleClass="menu-square"/>
+            <Button text="Save"   styleClass="menu-square"/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>
+

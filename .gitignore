@@ -2,7 +2,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!.claude
+!.github
 .kotlin
+AGENTS.md
+CLAUDE.md
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

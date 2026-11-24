@@ -2,10 +2,10 @@ package treble.demo.physicssim;
 
 public class Launcher {
     static void main(String[] args) {
-        double scrWidth = 1000;
-        double scrHeight = 500;
-        double simWidth = 100;
-        double simHeight = 50;
+        double scrWidth = 1920;
+        double scrHeight = 1080;
+        double simWidth = 192;
+        double simHeight = 108;
 
         String[] params = {
                 String.valueOf(scrWidth),

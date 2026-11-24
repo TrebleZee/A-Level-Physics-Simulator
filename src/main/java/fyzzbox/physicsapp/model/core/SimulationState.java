@@ -1,5 +1,9 @@
 package fyzzbox.physicsapp.model.core;
 
+import fyzzbox.physicsapp.model.core.rigidbodies.Body;
+import fyzzbox.physicsapp.model.core.rules.RuleConfig;
+import fyzzbox.physicsapp.model.world.EnvSettings;
+
 import java.util.List;
 
 public class SimulationState {

@@ -1,5 +1,7 @@
-package fyzzbox.physicsapp.model.core;
+package fyzzbox.physicsapp.model.core.rigidbodies;
 
+
+import fyzzbox.physicsapp.model.core.Vector2D;
 
 public class Body {
     private Vector2D position;
@@ -16,6 +18,14 @@ public class Body {
 
     public Vector2D getPosition() {
         return null;
+    }
+
+    public Vector2D getVelocity() {
+        return null;
+    }
+
+    public double getMass() {
+        return 0.0;
     }
 
     public Shape getShape() {

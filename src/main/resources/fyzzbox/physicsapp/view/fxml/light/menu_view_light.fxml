@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="567.0" prefWidth="1526.0" stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="567.0" prefWidth="1526.0" stylesheets="@/fyzzbox/physicsapp/view/css/lighttheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.MenuController">
    <children>
       <VBox alignment="CENTER" spacing="24.0" stylesheets="@../../css/lighttheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" style="-fx-font-size: 80;" styleClass="heading-1" stylesheets="@../../css/lighttheme.css" text="Main Menu" />
             <HBox alignment="CENTER" spacing="40" stylesheets="@../../css/lighttheme.css">
                <children>
-                  <Button styleClass="menu-square">
+                  <Button fx:id="loadSavedButton" onAction="#onLoadSavedClicked" styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
                            <Label styleClass="menu-card-title" text="Load from Saved" />
@@ -22,7 +22,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button styleClass="menu-square">
+                  <Button fx:id="startNewButton" onAction="#onStartNewClicked" styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
                            <Label styleClass="menu-card-title" text="Start New" />
@@ -30,7 +30,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="119.0" styleClass="menu-square">
+                  <Button fx:id="settingsButton" alignment="CENTER" contentDisplay="CENTER" onAction="#onSettingsClicked" prefHeight="119.0" styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
                            <Label styleClass="menu-card-title" text="Settings" />
@@ -40,7 +40,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" prefHeight="119.0" styleClass="menu-square">
+                  <Button fx:id="backButton" alignment="CENTER" onAction="#onBackClicked" prefHeight="119.0" styleClass="menu-square">
                      <graphic>
                         <VBox spacing="4">
                            <Label contentDisplay="CENTER" styleClass="menu-card-title" text="Back" />

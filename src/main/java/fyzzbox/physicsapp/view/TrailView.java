@@ -1,6 +1,5 @@
 package fyzzbox.physicsapp.view;
 
-import fyzzbox.physicsapp.model.core.Vector2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polyline;
 
@@ -17,9 +16,9 @@ public class TrailView extends Polyline {
         setStrokeWidth(1.5);
     }
 
-    public void addPoint(Vector2D point, double metersPerPixel) {
-        points.addLast(point.x() / metersPerPixel);
-        points.addLast(point.y() / metersPerPixel);
+    public void addPoint(double xPixels, double yPixels) {
+        points.addLast(xPixels);
+        points.addLast(yPixels);
 
         while (points.size() > maxPoints * 2) {
             points.removeFirst();

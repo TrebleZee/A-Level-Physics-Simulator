@@ -35,7 +35,7 @@ public class PhysicsController {
     private static final double MAX_FRAME_DT = 1.0 / 30.0;
 
     private Map<Particle, Polyline> trails;
-    final int MAX_POINTS = 800;
+    final long MAX_POINTS = 1000000000000L;
 
     // TD: declare trail, add to controller, update in func
 

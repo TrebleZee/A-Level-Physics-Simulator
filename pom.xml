@@ -98,7 +98,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>treble.demo.physicssim.Launcher</mainClass>
+                            <mainClass>fyzzbox.physicsapp.app.MainApp</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -167,7 +167,6 @@
                 <version>3.3.1</version>
                 <configuration>
                     <configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml</configLocation>
-                    <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>false</failsOnError>
                 </configuration>
@@ -191,7 +190,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>treble.demo.physicssim.Launcher</mainClass>
+                            <mainClass>fyzzbox.physicsapp.app.MainApp</mainClass>
                         </manifest>
                     </archive>
                     <finalName>PhysicsSimulator-${project.version}</finalName>
@@ -229,7 +228,7 @@
                             <finalName>PhysicsSimulator-${project.version}-standalone</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>treble.demo.physicssim.Launcher</mainClass>
+                                    <mainClass>fyzzbox.physicsapp.app.MainApp</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

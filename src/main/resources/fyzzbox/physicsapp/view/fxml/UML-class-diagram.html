@@ -1,10 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UML Class Diagram — Physics Simulator</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-text-primary: #1a1a18;
+            --color-text-secondary: #5f5e5a;
+            --color-text-tertiary: #888780;
+            --color-border-primary: rgba(0,0,0,0.4);
+            --color-border-tertiary: rgba(0,0,0,0.12);
+            --color-bg: #f8f7f2;
+            --font-sans: system-ui, -apple-system, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text-primary: #e8e6de;
+                --color-text-secondary: #b4b2a9;
+                --color-text-tertiary: #888780;
+                --color-border-primary: rgba(255,255,255,0.35);
+                --color-border-tertiary: rgba(255,255,255,0.1);
+                --color-bg: #1e1e1c;
+            }
+        }
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            padding: 24px 16px;
+            min-height: 100vh;
+        }
+        h1 { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+        .subtitle { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 16px; }
+        .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: var(--color-text-secondary); margin-bottom: 16px; }
+        .legend span { display: flex; align-items: center; gap: 5px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .layer-label { font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 6px; padding-left: 2px; }
+        .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: start; }
+        .col { display: flex; flex-direction: column; gap: 8px; }
+        .uml { border: 1px solid var(--color-border-primary); border-radius: 6px; overflow: hidden; cursor: pointer; transition: box-shadow .15s; font-size: 11px; }
+        .uml:hover { box-shadow: 0 0 0 2px var(--color-border-primary); }
+        .uml.active { box-shadow: 0 0 0 2px #7F77DD; }
+        .uml-head { padding: 5px 8px; font-weight: 500; font-size: 11px; text-align: center; border-bottom: 1px solid var(--color-border-tertiary); }
+        .uml-head .stereotype { font-size: 9px; font-weight: 400; opacity: .75; display: block; }
+        .uml-section { padding: 4px 8px; border-bottom: 1px solid var(--color-border-tertiary); min-height: 20px; }
+        .uml-section:last-child { border-bottom: none; }
+        .uml-row { color: var(--color-text-secondary); line-height: 1.6; font-size: 10px; }
+        .uml-row.method { color: var(--color-text-primary); }
+        .deps { padding: 4px 8px; background: rgba(127,119,221,.08); border-top: 1px solid rgba(127,119,221,.2); font-size: 9px; color: #7F77DD; display: none; }
+        .uml.active .deps { display: block; }
+        .deps-label { font-weight: 500; margin-bottom: 2px; font-size: 9px; }
+        .m .uml-head { background: rgba(206,203,246,.25); color: #3C3489; }
+        .v .uml-head { background: rgba(159,225,203,.2); color: #085041; }
+        .c .uml-head { background: rgba(244,192,209,.25); color: #72243E; }
+        @media (prefers-color-scheme: dark) {
+            .m .uml-head { background: rgba(60,52,137,.35); color: #CECBF6; }
+            .v .uml-head { background: rgba(8,80,65,.35); color: #9FE1CB; }
+            .c .uml-head { background: rgba(114,36,62,.35); color: #F4C0D1; }
+        }
+        .hint { font-size: 10px; color: var(--color-text-tertiary); text-align: center; margin-top: 12px; }
+        @media (max-width: 640px) {
+            .cols { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>UML Class Diagram — Physics Simulator</h1>
+<p class="subtitle">OCR H446 NEA · Design State v1 · Click any class to show dependencies</p>
+<div class="legend">
+    <span><span class="dot" style="background:#AFA9EC"></span>Model</span>
+    <span><span class="dot" style="background:#5DCAA5"></span>View</span>
+    <span><span class="dot" style="background:#ED93B1"></span>Controller</span>
+</div>
+<div class="cols">
+
+    <div class="col">
+        <div class="layer-label">Model</div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">Vector2D</div>
+            <div class="uml-section">
+                <div class="uml-row">- x: double</div>
+                <div class="uml-row">- y: double</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ add(v: Vector2D): Vector2D</div>
+                <div class="uml-row method">+ subtract(v: Vector2D): Vector2D</div>
+                <div class="uml-row method">+ scale(s: double): Vector2D</div>
+                <div class="uml-row method">+ magnitude(): double</div>
+                <div class="uml-row method">+ normalise(): Vector2D</div>
+                <div class="uml-row method">+ dot(v: Vector2D): double</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>none</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">Body</div>
+            <div class="uml-section">
+                <div class="uml-row">- position: Vector2D</div>
+                <div class="uml-row">- velocity: Vector2D</div>
+                <div class="uml-row">- force: Vector2D</div>
+                <div class="uml-row">- mass: double</div>
+                <div class="uml-row">- shape: Shape</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ applyForce(f: Vector2D): void</div>
+                <div class="uml-row method">+ update(dt: double): void</div>
+                <div class="uml-row method">+ getPosition(): Vector2D</div>
+                <div class="uml-row method">+ getShape(): Shape</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Vector2D</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">PhysicsRule<span class="stereotype">«interface»</span></div>
+            <div class="uml-section"><div class="uml-row" style="font-style:italic;font-size:9px">no fields</div></div>
+            <div class="uml-section">
+                <div class="uml-row method">+ detect(b: Body): boolean</div>
+                <div class="uml-row method">+ calculate(b: Body): Vector2D</div>
+                <div class="uml-row method">+ apply(b: Body): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Body, Vector2D</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">CollisionDetector</div>
+            <div class="uml-section"><div class="uml-row" style="font-style:italic;font-size:9px">no fields</div></div>
+            <div class="uml-section">
+                <div class="uml-row method">+ detect(a: Body, b: Body): boolean</div>
+                <div class="uml-row method">+ getContactData(a: Body, b: Body): ContactData</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Body, Vector2D</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">CollisionResolver</div>
+            <div class="uml-section"><div class="uml-row" style="font-style:italic;font-size:9px">no fields</div></div>
+            <div class="uml-section">
+                <div class="uml-row method">+ resolve(a: Body, b: Body, c: ContactData): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Body, Vector2D, CollisionDetector</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">SimulationState</div>
+            <div class="uml-section">
+                <div class="uml-row">- entities: List&lt;Body&gt;</div>
+                <div class="uml-row">- settings: EnvSettings</div>
+                <div class="uml-row">- ruleConfigs: List&lt;RuleConfig&gt;</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ toJSON(): String</div>
+                <div class="uml-row method">+ fromJSON(json: String): void</div>
+                <div class="uml-row method">+ getEntities(): List&lt;Body&gt;</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Body</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">RewindBuffer</div>
+            <div class="uml-section">
+                <div class="uml-row">- buffer: Deque&lt;SimulationState&gt;</div>
+                <div class="uml-row">- maxCapacity: int</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ push(s: SimulationState): void</div>
+                <div class="uml-row method">+ pop(): SimulationState</div>
+                <div class="uml-row method">+ isFull(): boolean</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>SimulationState</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">World</div>
+            <div class="uml-section">
+                <div class="uml-row">- state: SimulationState</div>
+                <div class="uml-row">- buffer: RewindBuffer</div>
+                <div class="uml-row">- rules: List&lt;PhysicsRule&gt;</div>
+                <div class="uml-row">- detector: CollisionDetector</div>
+                <div class="uml-row">- resolver: CollisionResolver</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ step(): void</div>
+                <div class="uml-row method">+ start(): void</div>
+                <div class="uml-row method">+ pause(): void</div>
+                <div class="uml-row method">+ setTimeScale(s: double): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>SimulationState, RewindBuffer, PhysicsRule, CollisionDetector, CollisionResolver</div>
+        </div>
+
+        <div class="uml m" onclick="toggle(this)">
+            <div class="uml-head">Environment</div>
+            <div class="uml-section">
+                <div class="uml-row">- world: World</div>
+                <div class="uml-row">- state: SimulationState</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ load(path: String): void</div>
+                <div class="uml-row method">+ save(path: String): void</div>
+                <div class="uml-row method">+ getState(): SimulationState</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>World, SimulationState</div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="layer-label">View</div>
+
+        <div class="uml v" onclick="toggle(this)">
+            <div class="uml-head">RenderSnapshot</div>
+            <div class="uml-section">
+                <div class="uml-row">- bodies: List&lt;BodyRenderData&gt;</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ RenderSnapshot(bodies: List&lt;BodyRenderData&gt;)</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>BodyRenderData</div>
+        </div>
+
+        <div class="uml v" onclick="toggle(this)">
+            <div class="uml-head">EntityRenderer</div>
+            <div class="uml-section">
+                <div class="uml-row">- canvas: Canvas</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ render(snap: RenderSnapshot): void</div>
+                <div class="uml-row method">+ drawShape(data: BodyRenderData): void</div>
+                <div class="uml-row method">+ drawVectorOverlay(data: BodyRenderData): void</div>
+                <div class="uml-row method">+ drawTrails(data: BodyRenderData): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>RenderSnapshot</div>
+        </div>
+
+    </div>
+
+    <div class="col">
+        <div class="layer-label">Controller</div>
+
+        <div class="uml c" onclick="toggle(this)">
+            <div class="uml-head">TimeController</div>
+            <div class="uml-section">
+                <div class="uml-row">- world: World</div>
+                <div class="uml-row">- buffer: RewindBuffer</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ pause(): void</div>
+                <div class="uml-row method">+ step(): void</div>
+                <div class="uml-row method">+ setScale(s: double): void</div>
+                <div class="uml-row method">+ rewind(): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>World, RewindBuffer</div>
+        </div>
+
+        <div class="uml c" onclick="toggle(this)">
+            <div class="uml-head">EntityController</div>
+            <div class="uml-section">
+                <div class="uml-row">- env: Environment</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ addBody(b: Body): void</div>
+                <div class="uml-row method">+ removeBody(id: int): void</div>
+                <div class="uml-row method">+ updateBodyProperties(id: int, props: Map): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Environment, Body</div>
+        </div>
+
+        <div class="uml c" onclick="toggle(this)">
+            <div class="uml-head">EnvironmentController</div>
+            <div class="uml-section">
+                <div class="uml-row">- env: Environment</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ updateForce(key: String, val: double): void</div>
+                <div class="uml-row method">+ updateSettings(key: String, val: Object): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Environment</div>
+        </div>
+
+        <div class="uml c" onclick="toggle(this)">
+            <div class="uml-head">SimulationCanvasController<span class="stereotype">«FXML controller»</span></div>
+            <div class="uml-section">
+                <div class="uml-row">- renderer: EntityRenderer</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ initialise(): void</div>
+                <div class="uml-row method">+ onModelUpdate(snap: RenderSnapshot): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>EntityRenderer, RenderSnapshot</div>
+        </div>
+
+        <div class="uml c" onclick="toggle(this)">
+            <div class="uml-head">InfoPanelController<span class="stereotype">«FXML controller»</span></div>
+            <div class="uml-section">
+                <div class="uml-row">- selectedBody: BodyRenderData</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ update(snap: RenderSnapshot): void</div>
+                <div class="uml-row method">+ onBodySelected(b: BodyRenderData): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>RenderSnapshot</div>
+        </div>
+
+        <div class="uml c" onclick="toggle(this)">
+            <div class="uml-head">SettingsWindowController<span class="stereotype">«FXML controller»</span></div>
+            <div class="uml-section">
+                <div class="uml-row">- env: Environment</div>
+            </div>
+            <div class="uml-section">
+                <div class="uml-row method">+ update(): void</div>
+                <div class="uml-row method">+ onSettingChanged(key: String, val: Object): void</div>
+            </div>
+            <div class="deps"><div class="deps-label">Depends on</div>Environment</div>
+        </div>
+    </div>
+</div>
+<div class="hint">click any class to show its dependencies</div>
+<script>
+    function toggle(el) {
+        const wasActive = el.classList.contains('active');
+        document.querySelectorAll('.uml').forEach(u => u.classList.remove('active'));
+        if (!wasActive) el.classList.add('active');
+    }
+</script>
 </body>
 </html>

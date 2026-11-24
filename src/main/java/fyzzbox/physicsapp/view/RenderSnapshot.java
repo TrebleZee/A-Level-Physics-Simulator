@@ -1,12 +1,15 @@
 package fyzzbox.physicsapp.view;
 
-import fyzzbox.physicsapp.model.SimulationState;
 import java.util.List;
 
-public class RenderSnapshot {
-    private List<BodyRenderData> bodies;
+public final class RenderSnapshot {
+    private final List<BodyRenderData> bodies;
 
-    public RenderSnapshot build(SimulationState s) {
-        return null;
+    public RenderSnapshot(List<BodyRenderData> bodies) {
+        this.bodies = List.copyOf(bodies);
+    }
+
+    public List<BodyRenderData> getBodies() {
+        return bodies;
     }
 }

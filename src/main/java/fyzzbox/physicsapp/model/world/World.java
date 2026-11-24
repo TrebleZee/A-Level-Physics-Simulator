@@ -1,8 +1,8 @@
 package fyzzbox.physicsapp.model.world;
 
-import fyzzbox.physicsapp.model.core.CollisionDetector;
-import fyzzbox.physicsapp.model.core.CollisionResolver;
-import fyzzbox.physicsapp.model.core.PhysicsRule;
+import fyzzbox.physicsapp.model.core.collision.CollisionDetector;
+import fyzzbox.physicsapp.model.core.collision.CollisionResolver;
+import fyzzbox.physicsapp.model.core.rules.PhysicsRule;
 import fyzzbox.physicsapp.model.core.RewindBuffer;
 import fyzzbox.physicsapp.model.core.SimulationState;
 

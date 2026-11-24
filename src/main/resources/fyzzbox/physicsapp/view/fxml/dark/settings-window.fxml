@@ -9,34 +9,35 @@
 <?import javafx.collections.FXCollections?>
 
 <?import javafx.geometry.Insets?>
-<BorderPane prefWidth="700" prefHeight="450"
+<BorderPane prefWidth="820" prefHeight="520"
             stylesheets="@../../css/darktheme.css"
             xmlns="http://javafx.com/javafx/26"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fyzzbox.physicsapp.controller.SettingsWindowController">
 
     <!-- ===== LEFT SIDEBAR ===== -->
     <left>
-        <VBox spacing="10" styleClass="settings-sidebar">
+        <VBox spacing="10" styleClass="settings-sidebar" prefWidth="180">
             <Label text="Settings" styleClass="heading-2"/>
 
-            <Button text="General"   styleClass="settings-tab"/>
-            <Button text="Display"   styleClass="settings-tab"/>
-            <Button text="Simulation" styleClass="settings-tab"/>
-            <Button text="Controls"  styleClass="settings-tab"/>
+            <Button onAction="#onGeneralTabClicked" text="General" styleClass="settings-tab"/>
+            <Button onAction="#onDisplayTabClicked" text="Display" styleClass="settings-tab"/>
+            <Button onAction="#onSimulationTabClicked" text="Simulation" styleClass="settings-tab"/>
+            <Button onAction="#onControlsTabClicked" text="Controls" styleClass="settings-tab"/>
         </VBox>
     </left>
 
-    <!-- ===== MAIN CONTENT AREA ===== -->
+    <!-- ===== MAIN CONTENT (General tab selected) ===== -->
     <center>
-        <VBox spacing="12" styleClass="settings-content">
+        <VBox spacing="16" styleClass="settings-content">
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
-            <Label text="General Settings" styleClass="heading-2"/>
+            <Label fx:id="sectionTitle" text="General Settings" styleClass="heading-2"/>
 
             <HBox spacing="10">
                 <Label text="Theme:"/>
-                <ComboBox fx:id="themeSelector">
+                <ComboBox fx:id="themeSelector" prefWidth="140">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="Dark"/>
@@ -48,25 +49,28 @@
 
             <HBox spacing="10">
                 <Label text="Autosave Interval:"/>
-                <TextField fx:id="autosaveField" prefWidth="60"/>
+                <TextField fx:id="autosaveField" prefWidth="60" text="10"/>
             </HBox>
 
+            <HBox spacing="10">
+                <Label text="Show Tooltips:"/>
+                <CheckBox fx:id="showTooltips" selected="true"/>
+            </HBox>
         </VBox>
     </center>
 
     <!-- ===== BOTTOM BUTTON BAR ===== -->
     <bottom>
-        <HBox spacing="10" alignment="CENTER_RIGHT"
-              styleClass="settings-bottom-bar">
+        <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="settings-bottom-bar">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
-            <Button text="Cancel" styleClass="menu-square"/>
-            <Button text="Apply"  styleClass="menu-square"/>
-            <Button text="Save"   styleClass="menu-square"/>
-
+            <Button onAction="#onCancelClicked" text="Cancel" styleClass="menu-button"/>
+            <Button onAction="#onApplyClicked" text="Apply" styleClass="menu-button"/>
+            <Button onAction="#onSaveClicked" text="Save" styleClass="menu-button"/>
         </HBox>
     </bottom>
 
 </BorderPane>
+
 

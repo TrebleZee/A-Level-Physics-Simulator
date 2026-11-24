@@ -1,6 +1,6 @@
 package fyzzbox.physicsapp.controller;
 
-import fyzzbox.physicsapp.model.core.Body;
+import fyzzbox.physicsapp.model.core.rigidbodies.Body;
 import fyzzbox.physicsapp.model.world.Environment;
 import java.util.Map;
 

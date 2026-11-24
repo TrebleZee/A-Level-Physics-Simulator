@@ -5,8 +5,7 @@ target/
 !.claude
 !.github
 .kotlin
-AGENTS.md
-CLAUDE.md
+.claude
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

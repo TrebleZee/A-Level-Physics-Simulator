@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+<BorderPane prefWidth="900" prefHeight="600"
+            stylesheets="@../../css/darktheme.css"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fyzzbox.physicsapp.controller.ScenarioListController">
+
+    <!-- ===== TOP TITLE ===== -->
+    <top>
+        <VBox>
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Saved Scenarios" styleClass="heading-1"/>
+        </VBox>
+    </top>
+
+    <!-- ===== CENTER LISTS ===== -->
+    <center>
+        <VBox spacing="30" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="40" alignment="CENTER">
+                <!-- Built-in scenarios -->
+                <VBox spacing="10" prefWidth="350" alignment="CENTER">
+                    <Label text="Built-in Scenarios" styleClass="heading-2"/>
+                    <ListView fx:id="builtinList" prefHeight="400" prefWidth="350">
+                        <placeholder><Label text="No built-in scenarios available"/></placeholder>
+                    </ListView>
+                </VBox>
+
+                <!-- User scenarios -->
+                <VBox spacing="10" prefWidth="350" alignment="CENTER">
+                    <Label text="Your Scenarios" styleClass="heading-2"/>
+                    <ListView fx:id="userList" prefHeight="400" prefWidth="350">
+                        <placeholder><Label text="No saved scenarios available"/></placeholder>
+                    </ListView>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+
+    <!-- ===== BOTTOM ACTION BAR ===== -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Button onAction="#onBackClicked" text="Back" styleClass="menu-button"/>
+            <Button onAction="#onOpenClicked" text="Open" styleClass="menu-button"/>
+            <Button onAction="#onEditClicked" text="Edit" styleClass="menu-button"/>
+            <Button onAction="#onDeleteClicked" text="Delete" styleClass="menu-button"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+

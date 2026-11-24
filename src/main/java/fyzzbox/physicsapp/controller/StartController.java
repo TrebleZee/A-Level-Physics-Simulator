@@ -13,7 +13,14 @@ public class StartController {
     @FXML
     private void onStartClicked() {
         if (sceneManager != null) {
-            sceneManager.showSimulationView();
+            sceneManager.showMainMenuView();
+        }
+    }
+
+    @FXML
+    private void onExitClicked() {
+        if (sceneManager != null) {
+            sceneManager.exitApplication();
         }
     }
 }

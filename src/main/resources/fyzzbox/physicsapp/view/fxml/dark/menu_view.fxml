@@ -17,12 +17,12 @@
     Controller: fyzzbox.physicsapp.controller.MenuController
 -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="1296.0" stylesheets="@../../css/darktheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="1296.0" stylesheets="@../../css/darktheme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fyzzbox.physicsapp.controller.MenuController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="1086.0" spacing="20.0" stylesheets="@../../css/darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label style="-fx-font-size: 80;" styleClass="heading-1" text="Main Menu" />
-            <Button styleClass="menu-card">
+            <Button fx:id="loadSavedButton" onAction="#onLoadSavedClicked" styleClass="menu-card">
                <graphic>
                   <VBox spacing="4">
                      <Label text="Load from Saved" styleClass="menu-card-title"/>
@@ -30,7 +30,7 @@
                   </VBox>
                </graphic>
             </Button>
-            <Button styleClass="menu-card">
+            <Button fx:id="startNewButton" onAction="#onStartNewClicked" styleClass="menu-card">
                <graphic>
                   <VBox spacing="4">
                      <Label text="Start New" styleClass="menu-card-title"/>
@@ -38,12 +38,12 @@
                   </VBox>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="137.0" text="Settings">
+            <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsClicked" prefHeight="58.0" prefWidth="137.0" text="Settings">
                <styleClass>
                   <String fx:value="menu-card" />
                   <String fx:value="menu-card-subtitle" />
                </styleClass></Button>
-            <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" styleClass="exit-button" text="Back" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="33.0" prefWidth="98.0" styleClass="exit-button" text="Back" />
          </children>
          <padding>
             <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />

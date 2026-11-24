@@ -4,29 +4,29 @@ An interactive JavaFX simulation tool designed to support **secondary school sci
 
 ## Project scope and goals
 
-## Refactor production branch status
+## Application structure
 
-This repository is currently in a **transition phase** between:
+This repository retains an older prototype alongside the production-track application:
 
 - `treble.demo.physicssim` → the original demo/prototype implementation.
 - `fyzzbox.physicsapp` (sometimes referred to as `fyyzbox` in planning notes) → the refactored production-track architecture.
 
-The **refactor production branch direction** is to make `fyzzbox.physicsapp` the main application surface because it provides a cleaner separation of concerns:
+The active application is `fyzzbox.physicsapp`, which follows a clearer separation of concerns:
 
 - `app/` for startup and scene composition.
 - `controller/` for interaction and orchestration logic.
-- `model/` for physics/domain rules and scenario definitions.
+- `model/` for physics/domain types and simulation state.
 - `view/` for JavaFX presentation components.
-- `util/` for shared timing/unit helpers.
+- `util/` for shared stateless helpers such as unit conversion.
 
 This structure is easier to scale, test, and maintain than the prototype package, where responsibilities are more tightly coupled.
 
-### Planned package ownership
+### Package ownership
 
-- **Current default runtime path**: `treble.demo.physicssim` (configured as the active launcher in Maven).
-- **Target main app path**: `fyzzbox.physicsapp` (the package intended to become the primary app once migration tasks are completed).
+- **Default runtime path**: `fyzzbox.physicsapp.app.MainApp` (configured as the Maven launcher).
+- **Legacy prototype**: `treble.demo.physicssim` (retained for reference; new work belongs in `fyzzbox.physicsapp`).
 
-During this migration period, the demo/prototype package remains useful for quick comparisons and regression checks, but new architecture work should prefer the `fyzzbox.physicsapp` side so the production branch can converge on the refactored design.
+FXML layout files and CSS are in `view/`; their Java controllers are in `controller/`.
 
 ### Educational scope
 This project targets learners in a secondary school setting (including A-Level / upper secondary classes) and supports teachers with a visual demonstration environment for core physics ideas.
@@ -67,7 +67,7 @@ Suggested flow:
 Students can:
 - Observe trails as evidence of past motion.
 - Compare acceleration and force outputs over time.
-- Form hypotheses (e.g., "higher mass means less acceleration under same force") and test by editing initial conditions in `PhysicsApp.java`.
+- Form hypotheses (e.g., "higher mass means less acceleration under same force") and test by editing initial conditions in the built-in scenario.
 
 ## 3) Assessment support
 Use the simulator as a quick formative assessment:
@@ -105,16 +105,8 @@ mvn clean compile
 mvn javafx:run
 ```
 
-## 4) Adjust simulation scenario (optional)
-To create custom classroom scenarios, edit particle initial values in:
-- `src/main/java/com/rober/physicssim/PhysicsApp.java`
-
-For example, you can change:
-- initial positions (`x`, `y`)
-- initial velocities (`vx`, `vy`)
-- mass and radius
-
-Then rebuild/run to test the new setup.
+The NEA design specifies built-in and user scenarios as serialized `SimulationState`
+data rather than Java scenario subclasses.
 
 ## Suggested classroom implementation
 - Start with a 5-minute demonstration.

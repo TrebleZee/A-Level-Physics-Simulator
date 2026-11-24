@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="fyzzbox.physicsapp.controller.InspectorController">
-    <padding>
-        <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
-    </padding>
-
-    <Label text="Particle Inspector"/>
-    <Label fx:id="massLabel" text="Mass:"/>
-    <Label fx:id="positionLabel" text="Position:"/>
-    <Label fx:id="velocityLabel" text="Velocity:"/>
-    <Button text="Back to Simulation" onAction="#onBackClicked"/>
-</VBox>
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+            styleClass="inspector-scroll-pane"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fyzzbox.physicsapp.controller.InfoPanelController">
+    <content>
+        <VBox spacing="10.0" styleClass="inspector-panel">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <Label text="Object Inspector" styleClass="heading-2"/>
+            <Label text="Selected Object:"/>
+            <Label fx:id="selectedName" text="None"/>
+            <Separator/>
+            <Label text="Properties:"/>
+            <VBox fx:id="propertiesBox" spacing="6.0">
+                <Label fx:id="massLabel" text="Mass:"/>
+                <Label fx:id="positionLabel" text="Position:"/>
+                <Label fx:id="velocityLabel" text="Velocity:"/>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>
